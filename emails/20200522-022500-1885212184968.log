@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: rithik08@gmail.com
+Date: Fri, 22 May 2020 07:25:00 -0000
+Message-ID: <159013230025.5936.9691284064879869250@DESKTOP-2BGD2FK>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/users/reset/Mg/5gp-ad7244117560a79ef7d5/
+
+Your username, in case you've forgotten: Rithik08
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------
