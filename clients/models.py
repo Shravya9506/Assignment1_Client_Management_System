@@ -50,7 +50,7 @@ class PurchasedCar(models.Model):
     client = models.ForeignKey(
         Client,
         on_delete = models.CASCADE,
-        related_name="purchasedCar",
+        related_name="purchasedCar"
     )
     carName = models.CharField(max_length=140, blank=True)
     carModelType = models.CharField(max_length=140, blank=True)

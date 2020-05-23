@@ -5,11 +5,11 @@
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
-<h2 class=>Log In</h2>
-<form method="post">
+<h1>Log In</h1>
+<form class="custom-form" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <div class="ml-4">
+    <div class="buttons-container">
         <button class="btn btn-success ml-5" type="submit">Log In</button>
         <p class="ml-5"><a href="{% url "password_reset" %}"><u>Forgot password?</u></a></p>
     </div>

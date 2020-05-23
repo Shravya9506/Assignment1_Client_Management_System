@@ -4,7 +4,7 @@
 {% block title %}Clients{% endblock title %}
 
 {% block content %}
-    <div class="d-flex flex-row"><a class="btn btn-info" type="button" href="{% url 'purchasedCar_new' %}">Add a newly purchased car details</a><button class="btn btn-info ml-5" href="{% url 'comment_new' %}">Add a new comment</button></div></br></br>
+    <div class="d-flex flex-row"><a class="btn btn-info" type="button" href="{% url 'purchasedCar_new' %}">Add a newly purchased car details</a><a type="button" class="btn btn-info ml-5" href="{% url 'comment_new' %}">Add a new comment</a></div>
     <h1>Clients list</h1>
   {% for client in object_list %}
     <div class="card">

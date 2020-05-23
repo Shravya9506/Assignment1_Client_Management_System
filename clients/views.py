@@ -48,7 +48,7 @@ class PurchasedCarCreatView(LoginRequiredMixin, CreateView):
     model = PurchasedCar
     fields = ('client', 'carName', 'carModelType', 'purchaseDate', 'soldBy')
     template_name = 'purchasedCar_new.html'
-    login_url = 'login'
+    success_url = reverse_lazy('client_list')
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -58,7 +58,6 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
     model = Comment
     fields = ('client', 'comment', 'author')
     template_name = 'Comment_new.html'
-    login_url = 'login'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
