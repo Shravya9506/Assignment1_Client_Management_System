@@ -9,6 +9,7 @@ from .views import (
     PurchasedCarUpdateView,
     PurchasedCarDeleteView,
     PurchasedCarCreatView,
+    CommentCreateView
 )
 
 urlpatterns = [
@@ -24,5 +25,6 @@ urlpatterns = [
     path('purchasedCar/<int:pk>/edit/', PurchasedCarUpdateView.as_view(), name='purchasedCar_edit'),
     path('purchasedCar/<int:pk>/delete/', PurchasedCarDeleteView.as_view(), name='purchasedCar_delete'),
     path('purchasedCar/new/', PurchasedCarCreatView.as_view(), name='purchasedCar_new'),
+    path('comment/new/', CommentCreateView.as_view(), name='comment_new')
 
 ]

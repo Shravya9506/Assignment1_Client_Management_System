@@ -4,6 +4,8 @@
 {% block title %}Clients{% endblock title %}
 
 {% block content %}
+    <div class="d-flex flex-row"><a class="btn btn-info" type="button" href="{% url 'purchasedCar_new' %}">Add a newly purchased car details</a><button class="btn btn-info ml-5" href="{% url 'comment_new' %}">Add a new comment</button></div></br></br>
+    <h1>Clients list</h1>
   {% for client in object_list %}
     <div class="card">
       <div class="card-header">
@@ -25,11 +27,10 @@
         <h6>Purchased cars</h6>
         {% for purchasedCar in client.purchasedCar.all %}
           <p>
-              <span class="font-weight-bold">{{ purchasedCar.soldBy }} . </span>car : {{ purchasedCar.carName }} | purchased date : {{ purchasedCar.purchaseDate }}
+              <span class="font-weight-bold">Sold by employee : {{ purchasedCar.soldBy }} . </span>car : {{ purchasedCar.carName }} | purchased date : {{ purchasedCar.purchaseDate }}
               <span> <a href="{% url 'purchasedCar_edit' purchasedCar.pk %}">Edit</a> | <a href="{% url 'purchasedCar_delete' purchasedCar.pk%}">Delete</a></span></br>
           </p>
         {% endfor %}
-        <a href="{% url 'purchasedCar_new' %}">Add a new purchased car</a>
       </div>
       <div class="card-footer">
           <h6>Comments</h6>
