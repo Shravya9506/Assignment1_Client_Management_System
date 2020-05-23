@@ -22,14 +22,17 @@
 
       </div>
     <div class="card-footer">
-        {% for carName in client.purchasedCar.all %}
+        <h6>Purchased cars</h6>
+        {% for purchasedCar in client.purchasedCar.all %}
           <p>
-            <span class="font-weight-bold">{{ client.author }} &middot;</span>
-              {{ carName }}
+              <span class="font-weight-bold">{{ purchasedCar.soldBy }} . </span>car : {{ purchasedCar.carName }} | purchased date : {{ purchasedCar.purchaseDate }}
+              <span> <a href="{% url 'purchasedCar_edit' purchasedCar.pk %}">Edit</a> | <a href="{% url 'purchasedCar_delete' purchasedCar.pk%}">Delete</a></span></br>
           </p>
         {% endfor %}
+        <a href="{% url 'purchasedCar_new' %}">Add a new purchased car</a>
       </div>
       <div class="card-footer">
+          <h6>Comments</h6>
         {% for comment in client.comments.all %}
           <p>
             <span class="font-weight-bold">{{ comment.author }} &middot;</span>
@@ -37,7 +40,7 @@
           </p>
         {% endfor %}
       </div>
-      <p><a href="{% url 'client_edit' client.pk %}">Edit</a> | <a href="{% url 'client_delete' client.pk %}">Delete</a></p>
+        <p><a href="{% url 'client_edit' client.pk %}">Edit</a> | <a href="{% url 'client_delete' client.pk %}">Delete</a></p>
 
     </div>
     <br />

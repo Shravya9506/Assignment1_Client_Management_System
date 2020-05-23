@@ -46,4 +46,25 @@ class Comment(models.Model):
     def get_absolute_url(self):
         return reverse('Client_list')
 
+class PurchasedCar(models.Model):
+    client = models.ForeignKey(
+        Client,
+        on_delete = models.CASCADE,
+        related_name="purchasedCar",
+    )
+    carName = models.CharField(max_length=140, blank=True)
+    carModelType = models.CharField(max_length=140, blank=True)
+    purchaseDate = models.DateField(blank=True)
+    soldBy = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+        blank=True
+    )
+
+    def __str__(self):
+        return self.carName
+
+    def get_absolute_url(self):
+        return reverse('client_list')
+
 
