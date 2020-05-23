@@ -5,12 +5,14 @@
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
-<h2 class="text-center">Log In</h2>
-<form method="post" class="text-center">
+<h2 class=>Log In</h2>
+<form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn btn-success ml-5" type="submit">Log In</button>
-    <p class="ml-5"><a href="{% url "password_reset" %}"><u>Forgot password?</u></a></p>
+    <div class="ml-4">
+        <button class="btn btn-success ml-5" type="submit">Log In</button>
+        <p class="ml-5"><a href="{% url "password_reset" %}"><u>Forgot password?</u></a></p>
+    </div>
 </form>
 {% endblock content %}
 </html>
